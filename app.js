@@ -112,6 +112,8 @@ const initialQuestion = {
 function writeHTML(html) {
     fs.writeFile(outputPath, html, function(err) {
         if (err) throw err;
+
+        console.log("Success! Team html created!");
     });
 }
 
@@ -132,7 +134,7 @@ function init() {
         }
         else if (res.employeeRole === "Engineer") {
             inquirer.prompt(engineerQuestions).then(engRes => {
-                let teamEngineer = new Engineer(engRes.name, engRes.id, negRes.email, engRes.github);
+                let teamEngineer = new Engineer(engRes.name, engRes.id, engRes.email, engRes.github);
                 employeeList.push(teamEngineer);
                 if (engRes.addAnother === "Yes") {
                     init();
