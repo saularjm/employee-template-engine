@@ -109,6 +109,12 @@ const initialQuestion = {
     ]
 };
 
+function writeHTML(html) {
+    fs.writeFile(outputPath, html, function(err) {
+        if (err) throw err;
+    });
+}
+
 function init() {
     inquirer.prompt(initialQuestion).then(res => {
         if (res.employeeRole === "Manager") {
@@ -119,7 +125,8 @@ function init() {
                     init();
                 }
                 else {
-                    render(employeeList);
+                    let teamHTML = render(employeeList);
+                    writeHTML(teamHTML);
                 }
             });
         }
@@ -131,7 +138,8 @@ function init() {
                     init();
                 }
                 else {
-                    render(employeeList);
+                    let teamHTML = render(employeeList);
+                    writeHTML(teamHTML);
                 }
             });
         }
@@ -143,12 +151,15 @@ function init() {
                     init();
                 }
                 else {
-                    render(employeeList);
+                    let teamHTML = render(employeeList);
+                    writeHTML(teamHTML);
                 }
             });
         }
     });
 };
+
+init();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
