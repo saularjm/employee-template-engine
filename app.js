@@ -10,6 +10,93 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+let employeeList = [];
+const managerQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "Enter Manager name:"
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "Enter Manager ID:"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Enter Manager email:"
+    },
+    {
+        type: "input",
+        name: "officeNumber",
+        message: "Enter Manager office number:"
+    }
+];
+
+const engineerQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "Enter Engineer name:"
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "Enter Engineer ID:"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Enter Engineer email:"
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "Enter Engineer GitHub username:"
+    }
+];
+
+const internQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "Enter Intern name:"
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "Enter Intern ID:"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Enter Intern email:"
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "Enter Intern school:"
+    }
+];
+
+const initialQuestion = {
+    type: "list",
+    name: "employeeRole",
+    message: "What is your role?",
+    choices: [
+        "Manager",
+        "Engineer",
+        "Intern"
+    ]
+};
+
+const addAnother = {
+    type: "list",
+    name: "addAnother",
+    message: "Would you like to add another employee?",
+    choices: ["Yes", "No"]
+};
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
@@ -21,15 +108,7 @@ const render = require("./lib/htmlRenderer");
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
 // `output` folder. You can use the variable `outputPath` above target this location.
-// Hint: you may need to check if the `output` folder exists and create it if it
-// does not.
 
 // HINT: each employee type (manager, engineer, or intern) has slightly different
 // information; write your code to ask different questions via inquirer depending on
 // employee type.
-
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an
-// object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```
