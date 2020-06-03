@@ -1,3 +1,4 @@
+// Require classes and node packages
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -5,12 +6,17 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+// Path to write HTML output
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
+// Require function to render HTML
 const render = require("./lib/htmlRenderer");
 
+// Array to hold employee objects created from CLI
 let employeeList = [];
+
+// Array of questions for manager 
 const managerQuestions = [
     {
         type: "input",
@@ -40,6 +46,7 @@ const managerQuestions = [
     }
 ];
 
+// Array of questions for engineer
 const engineerQuestions = [
     {
         type: "input",
@@ -69,6 +76,7 @@ const engineerQuestions = [
     }
 ];
 
+// Array of questions for intern
 const internQuestions = [
     {
         type: "input",
@@ -98,6 +106,7 @@ const internQuestions = [
     }
 ];
 
+// Initial question to determine employee role
 const initialQuestion = {
     type: "list",
     name: "employeeRole",
@@ -109,6 +118,7 @@ const initialQuestion = {
     ]
 };
 
+// Function to take user input data and write to output HTML file
 function writeHTML(html) {
     fs.writeFile(outputPath, html, function(err) {
         if (err) throw err;
@@ -117,41 +127,63 @@ function writeHTML(html) {
     });
 }
 
+// Function for main running of app
 function init() {
+
+    // Prompt with initial question to determine employee role
     inquirer.prompt(initialQuestion).then(res => {
+
+        // If manager, prompt with managerQuestions
         if (res.employeeRole === "Manager") {
             inquirer.prompt(managerQuestions).then(manRes => {
+
+                // Create new Manager object using user input and push to array of employees
                 let teamManager = new Manager(manRes.name, manRes.id, manRes.email, manRes.officeNumber);
                 employeeList.push(teamManager);
+
+                // If user chooses to add another employee, rerun init()
                 if (manRes.addAnother === "Yes") {
                     init();
                 }
+                // Else, render HTML and write to output file
                 else {
                     let teamHTML = render(employeeList);
                     writeHTML(teamHTML);
                 }
             });
         }
+        // If engineer, prompt with engineerQuestions
         else if (res.employeeRole === "Engineer") {
             inquirer.prompt(engineerQuestions).then(engRes => {
+
+                // Create new Engineer object using user input and push to array of employees
                 let teamEngineer = new Engineer(engRes.name, engRes.id, engRes.email, engRes.github);
                 employeeList.push(teamEngineer);
+
+                // If user chooses to add another employee, rerun init()
                 if (engRes.addAnother === "Yes") {
                     init();
                 }
+                // Else, render HTML and write to output file
                 else {
                     let teamHTML = render(employeeList);
                     writeHTML(teamHTML);
                 }
             });
         }
+        // If intern, prompt with internQuestions
         else {
             inquirer.prompt(internQuestions).then(intRes => {
+
+                // Create new Intern object using user input and push to array of employees
                 let teamIntern = new Intern(intRes.name, intRes.id, intRes.email, intRes.school);
                 employeeList.push(teamIntern);
+
+                // If user chooses to add another employee, rerun init()
                 if (intRes.addAnother === "Yes") {
                     init();
                 }
+                // Else, render HTML and write to output file
                 else {
                     let teamHTML = render(employeeList);
                     writeHTML(teamHTML);
@@ -161,18 +193,5 @@ function init() {
     });
 };
 
+// Call function to run app
 init();
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
-
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
-
-// After you have your html, you're now ready to create an HTML file using the HTML
-// returned from the `render` function. Now write it to a file named `team.html` in the
-// `output` folder. You can use the variable `outputPath` above target this location.
-
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
