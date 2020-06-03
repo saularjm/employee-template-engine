@@ -1,17 +1,21 @@
+// Require Engineer class
 const Engineer = require("../lib/Engineer");
 
-test("Can set GitHUb account via constructor", () => {
+// Test GitHub constructor
+test("Can set GitHub account via constructor", () => {
   const testValue = "GitHubUser";
   const e = new Engineer("Foo", 1, "test@test.com", testValue);
   expect(e.github).toBe(testValue);
 });
 
+// Test getRole method
 test("getRole() should return \"Engineer\"", () => {
   const testValue = "Engineer";
   const e = new Engineer("Foo", 1, "test@test.com", "GitHubUser");
   expect(e.getRole()).toBe(testValue);
 });
 
+// Test getGithub method
 test("Can get GitHub username via getGithub()", () => {
   const testValue = "GitHubUser";
   const e = new Engineer("Foo", 1, "test@test.com", testValue);
