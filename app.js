@@ -31,6 +31,12 @@ const managerQuestions = [
         type: "input",
         name: "officeNumber",
         message: "Enter Manager office number:"
+    },
+    {
+        type: "list",
+        name: "addAnother",
+        message: "Would you like to add another employee?",
+        choices: ["Yes", "No"]
     }
 ];
 
@@ -54,6 +60,12 @@ const engineerQuestions = [
         type: "input",
         name: "github",
         message: "Enter Engineer GitHub username:"
+    },
+    {
+        type: "list",
+        name: "addAnother",
+        message: "Would you like to add another employee?",
+        choices: ["Yes", "No"]
     }
 ];
 
@@ -77,6 +89,12 @@ const internQuestions = [
         type: "input",
         name: "school",
         message: "Enter Intern school:"
+    },
+    {
+        type: "list",
+        name: "addAnother",
+        message: "Would you like to add another employee?",
+        choices: ["Yes", "No"]
     }
 ];
 
@@ -91,13 +109,46 @@ const initialQuestion = {
     ]
 };
 
-const addAnother = {
-    type: "list",
-    name: "addAnother",
-    message: "Would you like to add another employee?",
-    choices: ["Yes", "No"]
+function init() {
+    inquirer.prompt(initialQuestion).then(res => {
+        if (res.employeeRole === "Manager") {
+            inquirer.prompt(managerQuestions).then(manRes => {
+                let teamManager = new Manager(manRes.name, manRes.id, manRes.email, manRes.officeNumber);
+                employeeList.push(teamManager);
+                if (manRes.addAnother === "Yes") {
+                    init();
+                }
+                else {
+                    render(employeeList);
+                }
+            });
+        }
+        else if (res.employeeRole === "Engineer") {
+            inquirer.prompt(engineerQuestions).then(engRes => {
+                let teamEngineer = new Engineer(engRes.name, engRes.id, negRes.email, engRes.github);
+                employeeList.push(teamEngineer);
+                if (engRes.addAnother === "Yes") {
+                    init();
+                }
+                else {
+                    render(employeeList);
+                }
+            });
+        }
+        else {
+            inquirer.prompt(internQuestions).then(intRes => {
+                let teamIntern = new Intern(intRes.name, intRes.id, intRes.email, intRes.school);
+                employeeList.push(teamIntern);
+                if (intRes.addAnother === "Yes") {
+                    init();
+                }
+                else {
+                    render(employeeList);
+                }
+            });
+        }
+    });
 };
-
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
