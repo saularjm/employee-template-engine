@@ -53,4 +53,3 @@ their team.html page was successfully created.
     the output folder.
     - A screenshot of that team.html can be found in the assets folder.
     - Check out a video of the app functionality here:
-        - 
