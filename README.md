@@ -51,5 +51,5 @@ their team.html page was successfully created.
 - Included in this repo:
     - An example team.html file created using this app can be found in
     the output folder.
-    - A screenshot of that team.html can be found in the assets folder.
+    - Screenshots of example team.html websites can be found in the assets folder.
     - Check out a video of the app functionality here:
