@@ -53,3 +53,4 @@ their team.html page was successfully created.
     the output folder.
     - Screenshots of example team.html websites can be found in the assets folder.
     - Check out a video of the app functionality here:
+        - https://drive.google.com/file/d/1RFOlg7xhPof7cxbrDvEjwDaN1z_0WUEm/view?usp=sharing
