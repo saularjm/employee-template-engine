@@ -10,8 +10,7 @@
     <title>My Team</title>
 
     <!--Linked bootstrap, style.css, and fontawesome-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
 </head>
@@ -20,7 +19,7 @@
     <!--Container for page header-->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 jumbotron mb-3 team-heading bg-primary text-white">
+            <div class="col-12 jumbotron mb-3 team-heading bg-info text-white">
                 <h1 class="text-center">My Team</h1>
             </div>
         </div>
@@ -28,14 +27,15 @@
 
     <!--Container for team info cards-->
     <div class="container">
-        <div class="row">
-            <div class="team-area col-12 d-flex justify-content-center">
-                <!--Card to hold employee info-->
-<div class="card employee-card mx-2 my-2">
+        <div class="row row-cols-1 row-cols-3">
+            
+                <div class="col">
+<!--Card to hold employee info-->
+<div class="card employee-card my-2" >
 
     <!--Card header with employee name and role-->
     <div class="card-header bg-info text-white">
-        <h2 class="card-title">ManName</h2>
+        <h2 class="card-title">man</h2>
         <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
     </div>
 
@@ -43,17 +43,18 @@
     <div class="card-body">
         <ul class="list-group">
             <li class="list-group-item">ID: 1</li>
-            <li class="list-group-item">Email: <a href="mailto:man@man.com">man@man.com</a></li>
+            <li class="list-group-item">Email: <a href="mailto:email">email</a></li>
             <li class="list-group-item">Office number: 1</li>
         </ul>
     </div>
 </div>
+</div><div class="col">
 <!--Card to hold employee info-->
-<div class="card employee-card mx-2 my-2">
+<div class="card employee-card my-2" >
 
     <!--Card header with employee name and role-->
     <div class="card-header bg-info text-white">
-        <h2 class="card-title">EngName</h2>
+        <h2 class="card-title">eng</h2>
         <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
     </div>
 
@@ -61,67 +62,72 @@
     <div class="card-body">
         <ul class="list-group">
             <li class="list-group-item">ID: 2</li>
-            <li class="list-group-item">Email: <a href="mailto:eng1@eng.com">eng1@eng.com</a></li>
-            <li class="list-group-item">GitHub: <a href="https://github.com/eng1" target="_blank" rel="noopener noreferrer">eng1</a></li>
+            <li class="list-group-item">Email: <a href="mailto:engemail">engemail</a></li>
+            <li class="list-group-item">GitHub: <a href="https://github.com/userame" target="_blank" rel="noopener noreferrer">userame</a></li>
         </ul>
     </div>
 </div>
-,<!--Card to hold employee info-->
-<div class="card employee-card mx-2 my-2">
+</div><div class="col">
+<!--Card to hold employee info-->
+<div class="card employee-card my-2" >
 
     <!--Card header with employee name and role-->
     <div class="card-header bg-info text-white">
-        <h2 class="card-title">Eng2</h2>
+        <h2 class="card-title">eng2</h2>
         <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
     </div>
 
     <!--Card body with engineer info-->
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">ID: 3</li>
-            <li class="list-group-item">Email: <a href="mailto:eng2@eng.com">eng2@eng.com</a></li>
-            <li class="list-group-item">GitHub: <a href="https://github.com/eng2" target="_blank" rel="noopener noreferrer">eng2</a></li>
+            <li class="list-group-item">ID: 4</li>
+            <li class="list-group-item">Email: <a href="mailto:email2">email2</a></li>
+            <li class="list-group-item">GitHub: <a href="https://github.com/user" target="_blank" rel="noopener noreferrer">user</a></li>
         </ul>
     </div>
 </div>
-<!--Card to hold employee info-->
-<div class="card employee-card mx-2 my-2">
-
-    <!--Card header with employee name and role-->
-    <div class="card-header bg-info text-white">
-        <h2 class="card-title">IntName</h2>
-        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>Intern</h3>
-    </div>
-
-    <!--Card body with intern info-->
-    <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item">ID: 5</li>
-            <li class="list-group-item">Email: <a href="mailto:int@int.com">int@int.com</a></li>
-            <li class="list-group-item">School: intSchool</li>
-        </ul>
-    </div>
 </div>
-,<!--Card to hold employee info-->
-<div class="card employee-card mx-2 my-2">
-
-    <!--Card header with employee name and role-->
-    <div class="card-header bg-info text-white">
-        <h2 class="card-title">Int2</h2>
-        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>Intern</h3>
+<div class="col">
+    <!--Card to hold employee info-->
+    <div class="card employee-card my-2" >
+    
+        <!--Card header with employee name and role-->
+        <div class="card-header bg-info text-white">
+            <h2 class="card-title">eng2</h2>
+            <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
+        </div>
+    
+        <!--Card body with engineer info-->
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">ID: 4</li>
+                <li class="list-group-item">Email: <a href="mailto:email2">email2</a></li>
+                <li class="list-group-item">GitHub: <a href="https://github.com/user" target="_blank" rel="noopener noreferrer">user</a></li>
+            </ul>
+        </div>
     </div>
-
-    <!--Card body with intern info-->
-    <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item">ID: 8</li>
-            <li class="list-group-item">Email: <a href="mailto:int2@int.com">int2@int.com</a></li>
-            <li class="list-group-item">School: intU</li>
-        </ul>
     </div>
-</div>
-
+    <div class="col">
+        <!--Card to hold employee info-->
+        <div class="card employee-card my-2" >
+        
+            <!--Card header with employee name and role-->
+            <div class="card-header bg-info text-white">
+                <h2 class="card-title">eng2</h2>
+                <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
             </div>
+        
+            <!--Card body with engineer info-->
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">ID: 4</li>
+                    <li class="list-group-item">Email: <a href="mailto:email2">email2</a></li>
+                    <li class="list-group-item">GitHub: <a href="https://github.com/user" target="_blank" rel="noopener noreferrer">user</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+           
         </div>
     </div>
 </body>
