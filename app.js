@@ -63,7 +63,7 @@ const managerQuestions = [
         message: "Enter Manager office number:",
         validate: async (input) => {
             if (isNaN(input)) {
-                return "Please enter a valid ID number";
+                return "Please enter a valid office number";
             }
             else {
                 return true;
