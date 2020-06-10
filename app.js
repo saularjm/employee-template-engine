@@ -21,22 +21,54 @@ const managerQuestions = [
     {
         type: "input",
         name: "name",
-        message: "Enter Manager name:"
+        message: "Enter Manager name:",
+        validate: async (input) => {
+            if (input === "") {
+                return "Please enter a name";
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "input",
         name: "id",
-        message: "Enter Manager ID:"
+        message: "Enter Manager ID:",
+        validate: async (input) => {
+            if (isNaN(input)) {
+                return "Please enter a valid ID number";
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "input",
         name: "email",
-        message: "Enter Manager email:"
+        message: "Enter Manager email:",
+        validate: async (input) => {
+            if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(input)) {
+                return true;
+            }
+            else {
+                return "Please enter a valid email address";
+            }
+        }
     },
     {
         type: "input",
         name: "officeNumber",
-        message: "Enter Manager office number:"
+        message: "Enter Manager office number:",
+        validate: async (input) => {
+            if (isNaN(input)) {
+                return "Please enter a valid ID number";
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "list",
@@ -51,22 +83,54 @@ const engineerQuestions = [
     {
         type: "input",
         name: "name",
-        message: "Enter Engineer name:"
+        message: "Enter Engineer name:",
+        validate: async (input) => {
+            if (input === "") {
+                return "Please enter a name";
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "input",
         name: "id",
-        message: "Enter Engineer ID:"
+        message: "Enter Engineer ID:",
+        validate: async (input) => {
+            if (isNaN(input)) {
+                return "Please enter a valid ID number";
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "input",
         name: "email",
-        message: "Enter Engineer email:"
+        message: "Enter Engineer email:",
+        validate: async (input) => {
+            if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(input)) {
+                return true;
+            }
+            else {
+                return "Please enter a valid email address";
+            }
+        }
     },
     {
         type: "input",
         name: "github",
-        message: "Enter Engineer GitHub username:"
+        message: "Enter Engineer GitHub username:",
+        validate: async (input) => {
+            if (input === "") {
+                return "Please enter a username";
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "list",
@@ -81,22 +145,54 @@ const internQuestions = [
     {
         type: "input",
         name: "name",
-        message: "Enter Intern name:"
+        message: "Enter Intern name:",
+        validate: async (input) => {
+            if (input === "") {
+                return "Please enter a name";
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "input",
         name: "id",
-        message: "Enter Intern ID:"
+        message: "Enter Intern ID:",
+        validate: async (input) => {
+            if (isNaN(input)) {
+                return "Please enter a valid ID number";
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "input",
         name: "email",
-        message: "Enter Intern email:"
+        message: "Enter Intern email:",
+        validate: async (input) => {
+            if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(input)) {
+                return true;
+            }
+            else {
+                return "Please enter a valid email address";
+            }
+        }
     },
     {
         type: "input",
         name: "school",
-        message: "Enter Intern school:"
+        message: "Enter Intern school:",
+        validate: async (input) => {
+            if (input === "") {
+                return "Please enter a school";
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "list",
