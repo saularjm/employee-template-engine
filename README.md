@@ -30,6 +30,8 @@ in order to build profiles for different team members.
     - Intern
 - Based on which role is chosen, the user will then be presented will a set of questions,
 specific to the role of each employee.
+    - Each question has a built in validation test to ensure integrity of answers. The user
+    will be prompted if they enter an invalid answer.
 - After all profile questions have been answered, the user will be asked whether they want
 to add another team member or finish the application.
 - Upon finishing adding team members, the user will be notified on the command line that
